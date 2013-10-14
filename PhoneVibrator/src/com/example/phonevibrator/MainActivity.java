@@ -5,10 +5,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.phonevibrator.receiver.PhoneCallListener;
 
@@ -42,7 +44,13 @@ public class MainActivity extends Activity implements OnClickListener {
         TelephonyManager telManager = (TelephonyManager)getSystemService(TELEPHONY_SERVICE);
         switch (v.getId()) {
             case R.id.ok:
-                second = Integer.parseInt(et_second.getText().toString());
+                String text = et_second.getText().toString();
+                if (TextUtils.isEmpty(text)) {
+                    Toast.makeText(MainActivity.this, getString(R.string.plz_input_second), 0)
+                            .show();
+                    return;
+                }
+                second = Integer.parseInt(text);
                 telManager.listen(new PhoneCallListener(MainActivity.this),
                         PhoneStateListener.LISTEN_CALL_STATE);
                 break;
