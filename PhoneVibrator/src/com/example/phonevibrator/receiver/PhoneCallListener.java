@@ -41,10 +41,10 @@ public class PhoneCallListener extends PhoneStateListener {
         triggerAtTime = sec * 1000;
         interval = 60 * 1000;
         switch (state) {
-            case TelephonyManager.CALL_STATE_IDLE:// 空闲
+            case TelephonyManager.CALL_STATE_IDLE:// 空闲状态
                 am.cancel(pi);
                 break;
-            case TelephonyManager.CALL_STATE_OFFHOOK:// 接通
+            case TelephonyManager.CALL_STATE_OFFHOOK:// 接通状态
                 am.setRepeating(AlarmManager.RTC_WAKEUP,
                         System.currentTimeMillis() + triggerAtTime, interval, pi);
                 break;
