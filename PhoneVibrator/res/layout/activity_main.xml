@@ -9,7 +9,8 @@
         android:id="@+id/second"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="请输入你想在多少秒的时候进行提示" />
+        android:hint="请输入你想在多少秒的时候进行提示"
+        android:text="50" />
 
     <Button
         android:id="@+id/ok"
@@ -22,5 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="关闭" />
+
+    <CheckBox
+        android:id="@+id/rb_boot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="是否开机启动" />
 
 </LinearLayout>

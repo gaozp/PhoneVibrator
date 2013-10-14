@@ -31,7 +31,7 @@
         <receiver android:name="com.example.phonevibrator.receiver.AlarmReceiver" >
         </receiver>
         <receiver android:name="com.example.phonevibrator.receiver.BootCompleteReceiver" >
-            <intent-filter android:priority="2147483647" >
+            <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
